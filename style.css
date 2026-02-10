@@ -1,0 +1,232 @@
+:root{
+    --color1: rgba(255, 255, 255, 0); 
+    /* --color1: rgba(16,2,23,.8); */
+    --color1A: rgba(70, 127, 191, 0.5);
+    --color2: rgb(203, 34, 24);
+    --color2A: rgba(255, 201, 127, 0.5);
+    --color3: rgb(86,58,115);
+    --color3A: rgba(255, 125, 127, 0.5);
+    --outline: rgba(255, 255, 255, 0);
+
+    --metacolor: var(--color2);
+    --metafontsize: 30px;
+    --subcolor: rgba(238, 255, 255, 1);
+    --subfontsize: 18px;
+}
+
+
+/* MAIN BACKGROUND AND ELEMENTS*/
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Hides the scrollbar */
+}
+/* WebKit browsers (Chrome, Safari) */
+html::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+body {
+    /* Background properties */
+    background-image: url('/gifs/IMG_0414-ezgif.com-optimize.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    
+    /* Layout properties */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Changed from 'top' to valid value */
+    align-items: center;
+    text-align: center;
+    overflow: scroll; /* Makes the body scrollable */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+    
+    /* Ensure proper rendering */
+    position: relative;
+    overflow-x: hidden;
+}
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(var(--color1A), var(--color2A)); */
+    position: fixed;
+    pointer-events: none;
+    z-index: -1;
+    
+}
+.page-container {
+    display: flex;
+    max-width: 80%;
+    justify-content: center;
+}
+
+/* HEADER */
+header {
+    position:relative; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    background-image: none;
+    background-position:center;
+    background-size: 30px;
+    background-repeat: repeat-x;
+    z-index: 1000; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+.titleImage {
+    width: 200px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    mix-blend-mode:color-dodge;
+    transition: all 0.4s;
+    filter:invert(20%);
+}
+.titleImage:hover {
+    transform: scale(1.1);
+    filter:invert(0%);
+}
+
+/* BODY TEXT */
+h1, p {
+    color: rgb(255, 255, 255);
+    font-family: 'Georgia', serif;
+    font-size: 18px;
+    margin: 0px;
+    padding: 0px;
+}
+.subtitle {
+    color: var(--subcolor);
+    font-family: 'Georgia', serif;
+    font-size: var(--subfontsize);
+}
+.metatitle {
+    color: var(--metacolor);
+    font-family: 'Georgia', serif;
+    font-size: var(--metafontsize);
+}
+gallerydesc {
+    position: relative; 
+    width: 100%; 
+    display:inline-flex; 
+    justify-content: center;
+    align-items: center; 
+}
+
+/* ARTICLES */
+blog {
+    margin-top: 25px;
+}
+.articletitle {
+    text-align: left;
+    max-width: 100%; 
+    margin: auto; 
+    padding: 0px;
+    word-wrap: break-word;
+    line-height: 1.5;
+    color: var(--color2);
+    font-family: 'Georgia', serif;
+    font-size: 25px;
+}
+.paragraph {
+    text-align: left;
+    max-width: 100%; 
+    margin: 0 auto; 
+    padding: 0px;
+    word-wrap: break-word;
+    line-height: 1.5;
+}
+
+/* LINKS */
+a {
+    color: var(--color3);
+    text-decoration: none;
+}
+a:hover {
+    color: white;
+}
+a:active {
+    color: white;
+}
+.mainlink{
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    transition: all 0.4s;
+}
+.mainlink:hover {
+    transform: scale(1.1);
+    
+}
+
+/* SHAPES */
+.box {
+    /* max-width: 60%; */
+    width:fit-content;
+    height:fit-content;
+    background-color: var(--color1);
+    border: 1px solid var(--outline);
+    padding: 20px;
+    margin: 5px;
+}
+.border{
+    display: block;
+    max-width: 100%; 
+    height: auto;
+    margin: 0;
+    padding: 0; 
+    background-color: var(--color1);
+    border: 1px solid var(--outline);
+    font-size: 0;
+}
+
+/* generic gallery, for two images on each row*/
+.gallery {
+    display: grid;
+    width: 70%; 
+    max-width: 70vw;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+  }
+  .gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    transition: all 0.4s;
+  }
+  .gallery img:hover {
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 8px rgba(86,58,115, 0.8));
+  }
+
+/*single images*/
+.gallerysingle {
+    display: grid;
+    width: 50%; 
+    max-width: 50vw;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    padding: 15px;
+  }
+  .gallerysingle img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    transition: all 0.4s;
+  }
+  .gallerysingle img:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px rgba(86,58,115, 0.8));
+  }
