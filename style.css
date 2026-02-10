@@ -2,7 +2,7 @@
     --color1: rgba(255, 255, 255, 0); 
     /* --color1: rgba(16,2,23,.8); */
     --color1A: rgba(70, 127, 191, 0.5);
-    --color2: rgb(203, 34, 24);
+    --color2: rgb(86,58,115);
     --color2A: rgba(255, 201, 127, 0.5);
     --color3: rgb(86,58,115);
     --color3A: rgba(255, 125, 127, 0.5);
@@ -38,11 +38,12 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    padding-left: 50px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Changed from 'top' to valid value */
-    align-items: center;
-    text-align: center;
+    justify-content: flex-start;
+    align-items: left;
+    text-align: left;
     overflow: scroll; /* Makes the body scrollable */
     scrollbar-width: none; /* Hide scrollbar in Firefox */
     
@@ -85,13 +86,13 @@ header {
     justify-content: center;
 }
 .titleImage {
-    width: 200px;
+    width: 500px;
     padding: 10px;
     display: flex;
-    align-items: center;
-    mix-blend-mode:color-dodge;
+    align-items: left;
+    mix-blend-mode:exclusion;
     transition: all 0.4s;
-    filter:invert(20%);
+    filter:invert(0%);
 }
 .titleImage:hover {
     transform: scale(1.1);
@@ -177,8 +178,7 @@ a:active {
     height:fit-content;
     background-color: var(--color1);
     border: 1px solid var(--outline);
-    padding: 20px;
-    margin: 5px;
+    padding-top: 20px;
 }
 .border{
     display: block;
@@ -194,11 +194,11 @@ a:active {
 /* generic gallery, for two images on each row*/
 .gallery {
     display: grid;
-    width: 70%; 
-    max-width: 70vw;
+    width: 80%; 
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;
-    padding: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   .gallery img {
     width: 100%;
@@ -215,10 +215,10 @@ a:active {
 .gallerysingle {
     display: grid;
     width: 50%; 
-    max-width: 50vw;
     grid-template-columns: repeat(1, 1fr);
-    gap: 30px;
-    padding: 15px;
+    gap: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
   .gallerysingle img {
     width: 100%;
