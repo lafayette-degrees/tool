@@ -228,6 +228,6 @@ a:active {
     transition: all 0.4s;
   }
   .gallerysingle img:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
     filter: drop-shadow(0 0 8px rgba(86,58,115, 0.8));
   }
