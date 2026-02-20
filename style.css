@@ -38,17 +38,18 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    padding-left: 50px;
-    width: 95%; 
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 100%; 
+    box-sizing: border-box;
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: left;
     text-align: left;
-    overflow: scroll; /* Makes the body scrollable */
+    overflow-y: scroll; /* Makes the body scrollable */
     scrollbar-width: none; /* Hide scrollbar in Firefox */
-    
-    /* Ensure proper rendering */
     position: relative;
     overflow-x: hidden;
 }
@@ -87,7 +88,8 @@ header {
     justify-content: center;
 }
 .titleImage {
-    width: 500px;
+    width: 100%;
+    max-width: 400px;
     padding: 10px;
     display: flex;
     align-items: left;
@@ -96,7 +98,7 @@ header {
     filter:invert(0%);
 }
 .titleImage:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     filter:invert(0%);
 }
 
@@ -118,36 +120,17 @@ h1, p {
     font-family: 'Georgia', serif;
     font-size: var(--metafontsize);
 }
-gallerydesc {
-    position: relative; 
-    width: 100%; 
-    display:inline-flex; 
-    justify-content: center;
-    align-items: center; 
-}
 
-/* ARTICLES */
-blog {
-    margin-top: 25px;
-}
-.articletitle {
+/* FOOTER */
+footer {
+    padding-top: 20px;
+    margin-bottom: 50px;
     text-align: left;
-    max-width: 100%; 
-    margin: auto; 
-    padding: 0px;
-    word-wrap: break-word;
-    line-height: 1.5;
-    color: var(--color2);
-    font-family: 'Georgia', serif;
-    font-size: 25px;
+    width: 100%;
 }
-.paragraph {
-    text-align: left;
-    max-width: 100%; 
-    margin: 0 auto; 
-    padding: 0px;
-    word-wrap: break-word;
-    line-height: 1.5;
+footer p {
+    color: grey; 
+    font-size: 10px;
 }
 
 /* LINKS */
@@ -200,6 +183,17 @@ a:active {
     gap: 15px;
     padding-top: 30px;
     padding-bottom: 30px;
+  }
+  @media screen and (max-width: 600px){
+    .gallery {
+        grid-template-columns: 1fr;
+        width: 95%; 
+    }
+  }
+  .gallery iframe {
+    aspect-ratio: 16/9;
+    height: auto;
+    max-width: 100%;
   }
   .gallery img {
     width: 100%;
